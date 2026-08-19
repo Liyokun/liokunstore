@@ -286,7 +286,7 @@
 
     /* ==========================================================================
        4. ĐIỀU HƯỚNG MŨI TÊN TUẦN HOÀN (CAROUSEL CONTROLS)
-       ========================================================================== */
+       ========================================================================= */
     .carousel-footer {
       display: flex;
       align-items: center;
@@ -349,6 +349,39 @@
       margin: auto;
       line-height: 1.6;
     }
+
+    /* ==========================================================================
+       5. BONG BÓNG THÔNG BÁO KÍNH MỜ (GLASS TOAST)
+       ========================================================================== */
+    #glass-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 42px;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(20, 22, 42, 0.88);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border: 1px solid var(--accent);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 14px color-mix(in srgb, var(--accent) 40%, transparent);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      z-index: 9999;
+      white-space: nowrap;
+      max-width: 90%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    #glass-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -375,6 +408,9 @@
     </footer>
   </div>
 
+  <!-- Bong bóng thông báo kính mờ -->
+  <div id="glass-toast">Thông báo</div>
+
   <script>
   (function(){
     "use strict";
@@ -399,6 +435,21 @@
     var currentPageIndex = 0;
     var APPS_PER_PAGE = 3;
 
+    /* ============ BONG BÓNG THÔNG BÁO KÍNH MỜ (TOAST) ============ */
+    var toastTimer = null;
+    function showToast(msg) {
+      var t = document.getElementById('glass-toast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function(){
+        t.classList.remove('show');
+      }, 2600);
+    }
+    // Đăng ký toàn cục để gọi trực tiếp từ Android MainActivity
+    window.showAppToast = showToast;
+
     /* ============ LOGIC HÌNH NỀN THEO THỜI GIAN THỰC ============ */
     function updateBackgroundByTime() {
       var hour = new Date().getHours();
@@ -418,7 +469,6 @@
     function fetchAppData() {
       var timestamp = new Date().getTime();
 
-      // Thử nạp thongtinapp.json hoặc thongtinstore.json, hoàn toàn không có dữ liệu mẫu dự phòng
       fetch('thongtinapp.json?t=' + timestamp)
         .then(function(res){
           if (res.ok) return res.json();
@@ -529,7 +579,7 @@
           var name = btn.getAttribute('data-app-name');
 
           if (!url) {
-            alert('Không tìm thấy liên kết tải về cho ứng dụng này!');
+            showToast('Không tìm thấy liên kết tải về cho ứng dụng này!');
             return;
           }
 
@@ -542,7 +592,7 @@
       });
     }
 
-    /* ============ ĐIỀU HƯỚNG TRANG (KHÔNG ĐỤNG ĐẾN HÌNH NỀN) ============ */
+    /* ============ ĐIỀU HƯỚNG TRANG ============ */
     document.getElementById('btn-next').addEventListener('click', function(){
       var totalPages = Math.ceil(rawAppsList.length / APPS_PER_PAGE) || 1;
       currentPageIndex = (currentPageIndex + 1) % totalPages;
@@ -565,7 +615,6 @@
       });
     }
 
-    // Khởi tạo hình nền theo giờ và nạp dữ liệu app
     updateBackgroundByTime();
     fetchAppData();
   })();
