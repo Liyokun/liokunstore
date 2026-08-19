@@ -415,8 +415,10 @@
     }
 
     function fetchAppData() {
-      fetch('thongtinapp.json')
-        .catch(function() { return fetch('thongtinstore.json'); })
+      var timestamp = new Date().getTime();
+      
+      fetch('thongtinapp.json?t=' + timestamp)
+        .catch(function() { return fetch('thongtinstore.json?t=' + timestamp); })
         .then(function(res){
           if (!res.ok) throw new Error('Không thể nạp file JSON');
           return res.json();
@@ -431,24 +433,24 @@
           rawAppsList = [
             {
               "id": "app_01",
-              "name": "Liokun Auto Clicker",
-              "icon": "icon_autoclick.png",
-              "desc": "Công cụ tự động hóa thao tác chạm và vuốt đa điểm tốc độ cao. Hỗ trợ lưu kịch bản macro tùy biến không cần root thiết bị.",
-              "download_url": "https://github.com/your-repo/releases/download/v1.0.0/autoclick.apk"
+              "name": "RedLi Reader Pro",
+              "icon": "icon_readlite.png",
+              "desc": "Trình đọc tiểu thuyết và truyện chữ tối giản tốc độ cao. Tự động tối ưu giao diện WebView, chặn quảng cáo rác và lưu tiến trình đọc thông minh.",
+              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
             },
             {
               "id": "app_02",
               "name": "Text to PC Sync",
               "icon": "icon_textsync.png",
               "desc": "Tiện ích chia sẻ nhanh nội dung clipboard và văn bản giữa điện thoại và máy tính qua mạng nội bộ Wi-Fi với một chạm.",
-              "download_url": "https://github.com/your-repo/releases/download/v1.0.0/textsync.apk"
+              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
             },
             {
               "id": "app_03",
-              "name": "Celestial ReadLite",
-              "icon": "icon_readlite.png",
-              "desc": "Trình quản lý và tổng hợp liên kết đọc truyện cá nhân hóa tối giản. Tối ưu hóa WebView đọc mượt mà không quảng cáo rác.",
-              "download_url": "https://github.com/your-repo/releases/download/v1.0.0/readlite.apk"
+              "name": "Liokun Auto Clicker",
+              "icon": "icon_autoclick.png",
+              "desc": "Công cụ tự động hóa thao tác chạm và vuốt đa điểm tốc độ cao. Hỗ trợ lưu kịch bản macro tùy biến không cần root thiết bị.",
+              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
             }
           ];
           currentPageIndex = 0;
