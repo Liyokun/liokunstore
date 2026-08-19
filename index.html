@@ -347,6 +347,7 @@
       font-style: italic;
       font-size: 14px;
       margin: auto;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -416,12 +417,15 @@
 
     function fetchAppData() {
       var timestamp = new Date().getTime();
-      
+
+      // Thử nạp thongtinapp.json hoặc thongtinstore.json, hoàn toàn không có dữ liệu mẫu dự phòng
       fetch('thongtinapp.json?t=' + timestamp)
-        .catch(function() { return fetch('thongtinstore.json?t=' + timestamp); })
         .then(function(res){
-          if (!res.ok) throw new Error('Không thể nạp file JSON');
-          return res.json();
+          if (res.ok) return res.json();
+          return fetch('thongtinstore.json?t=' + timestamp).then(function(r){
+            if (!r.ok) throw new Error('Không tìm thấy file cấu hình JSON trên GitHub');
+            return r.json();
+          });
         })
         .then(function(data){
           rawAppsList = Array.isArray(data) ? data : [];
@@ -429,30 +433,8 @@
           renderScreen();
         })
         .catch(function(err){
-          console.warn('Dùng dữ liệu dự phòng:', err);
-          rawAppsList = [
-            {
-              "id": "app_01",
-              "name": "RedLi Reader Pro",
-              "icon": "icon_readlite.png",
-              "desc": "Trình đọc tiểu thuyết và truyện chữ tối giản tốc độ cao. Tự động tối ưu giao diện WebView, chặn quảng cáo rác và lưu tiến trình đọc thông minh.",
-              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-            },
-            {
-              "id": "app_02",
-              "name": "Text to PC Sync",
-              "icon": "icon_textsync.png",
-              "desc": "Tiện ích chia sẻ nhanh nội dung clipboard và văn bản giữa điện thoại và máy tính qua mạng nội bộ Wi-Fi với một chạm.",
-              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-            },
-            {
-              "id": "app_03",
-              "name": "Liokun Auto Clicker",
-              "icon": "icon_autoclick.png",
-              "desc": "Công cụ tự động hóa thao tác chạm và vuốt đa điểm tốc độ cao. Hỗ trợ lưu kịch bản macro tùy biến không cần root thiết bị.",
-              "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-            }
-          ];
+          console.warn('Lỗi nạp dữ liệu app:', err);
+          rawAppsList = [];
           currentPageIndex = 0;
           renderScreen();
         });
@@ -495,7 +477,7 @@
       var currentApps = rawAppsList.slice(start, start + APPS_PER_PAGE);
 
       if (!currentApps.length) {
-        container.innerHTML = '<div class="empty-state">Chưa có ứng dụng nào trong danh mục.</div>';
+        container.innerHTML = '<div class="empty-state">Chưa nạp được dữ liệu từ file JSON.<br>Vui lòng kiểm tra lại kết nối mạng hoặc file JSON trên GitHub.</div>';
         return;
       }
 
