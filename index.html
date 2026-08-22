@@ -8,26 +8,26 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       1. CẤU HÌNH BIẾN & KÍNH MỜ CỤC BỘ
+       1. CẤU HÌNH BIẾN & KÍNH MỜ CỤC BỘ (GLASS THEME)
        ========================================================================== */
     :root {
       --accent: #C9B8F5;
       --accent-dim: #9C8FD4;
-      --accent-glow: rgba(201, 184, 245, 0.45);
+      --accent-glow: rgba(201, 184, 245, 0.4);
       --ink: #FFFFFF;
       --ink-soft: #EDEBF7;
-      --muted: #B0B5D6;
-      --card-bg: rgba(18, 20, 38, 0.65);
-      --card-border: rgba(255, 255, 255, 0.16);
-      --card-border-glow: rgba(201, 184, 245, 0.35);
-      --panel-blur: blur(18px) saturate(160%);
+      --muted: #A3A8CE;
+      --card-bg: rgba(18, 20, 38, 0.62);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --card-border-glow: rgba(201, 184, 245, 0.38);
+      --panel-blur: blur(20px) saturate(160%);
       --radius-lg: 22px;
       --radius-md: 14px;
-      --shadow-card: 0 10px 28px -8px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+      --shadow-card: 0 12px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.16);
     }
 
     * {
@@ -38,7 +38,6 @@
     }
     *::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
 
-    /* Nền body - Khởi tạo màu tối trước khi nạp ảnh theo giờ */
     body {
       margin: 0;
       padding: 0;
@@ -131,7 +130,7 @@
     }
 
     /* ==========================================================================
-       3. KÉN ẨN: CĂN GIỮA CỤM 3 CARD
+       3. KÉN ẨN: CĂN GIỮA CỤM CARD
        ========================================================================== */
     .cocoon-viewport {
       flex: 1;
@@ -196,7 +195,7 @@
     .app-icon-placeholder {
       font-size: 11px;
       font-weight: 700;
-      color: var(--muted);
+      color: var(--accent);
       text-transform: uppercase;
       font-family: 'IBM Plex Mono', monospace;
     }
@@ -221,7 +220,7 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--card-border);
       display: flex;
       align-items: center;
@@ -240,7 +239,7 @@
       display: none;
       padding: 0 16px 16px;
       border-top: 1px dashed rgba(255, 255, 255, 0.12);
-      background: rgba(0, 0, 0, 0.18);
+      background: rgba(0, 0, 0, 0.2);
       animation: fadeIn 0.22s ease-out;
     }
     .app-card.expanded .app-drawer {
@@ -252,7 +251,7 @@
     }
 
     .app-description-text {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ink-soft);
       line-height: 1.55;
       margin: 12px 0 14px;
@@ -260,33 +259,46 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
     }
 
+    /* ==========================================================================
+       NÚT CÀI ĐẶT KÍNH MỜ HIỆN ĐẠI (FROSTED GLASS BUTTON)
+       ========================================================================== */
     .btn-download-action {
       width: 100%;
-      padding: 12px;
+      padding: 11px 16px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 80%, white 20%), var(--accent-dim));
-      color: #121324;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
+      border: 1px solid rgba(201, 184, 245, 0.35);
+      background: linear-gradient(135deg, rgba(201, 184, 245, 0.16) 0%, rgba(156, 143, 212, 0.26) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 6px 18px -4px var(--accent-glow);
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      gap: 10px;
+      box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
     }
     .btn-download-action:active {
       transform: scale(0.96);
-      opacity: 0.9;
+      background: linear-gradient(135deg, rgba(201, 184, 245, 0.25) 0%, rgba(156, 143, 212, 0.38) 100%);
+      border-color: var(--accent);
     }
-    .btn-download-action svg { width: 18px; height: 18px; color: #121324; stroke-width: 2.2; }
+    .btn-download-action svg {
+      width: 17px;
+      height: 17px;
+      color: var(--accent);
+      stroke-width: 2.2;
+      filter: drop-shadow(0 0 5px var(--accent-glow));
+    }
 
     /* ==========================================================================
        4. ĐIỀU HƯỚNG MŨI TÊN TUẦN HOÀN (CAROUSEL CONTROLS)
-       ========================================================================= */
+       ========================================================================== */
     .carousel-footer {
       display: flex;
       align-items: center;
@@ -447,7 +459,6 @@
         t.classList.remove('show');
       }, 2600);
     }
-    // Đăng ký toàn cục để gọi trực tiếp từ Android MainActivity
     window.showAppToast = showToast;
 
     /* ============ LOGIC HÌNH NỀN THEO THỜI GIAN THỰC ============ */
@@ -551,7 +562,7 @@
            + '  <div class="app-drawer">'
            + '    <div class="app-description-text">' + escapeHtml(app.desc || 'Không có mô tả chi tiết.') + '</div>'
            + '    <button class="btn-download-action" data-download-url="' + escapeHtml(app.download_url) + '" data-app-name="' + escapeHtml(app.name) + '">'
-           +        ICONS.download + '<span>TẢI & CÀI ĐẶT</span>'
+           +        ICONS.download + '<span>INSTALL</span>'
            + '    </button>'
            + '  </div>'
            + '</div>';
