@@ -43,9 +43,9 @@
   },
   {
     "id": "app_07",
-    "name": "Quick Note Minimal",
+    "name": "ML Core Test App",
     "icon": "icon_quicknote.png",
-    "desc": "Sổ ghi chú nhanh siêu nhẹ hỗ trợ Markdown, tự động lưu cục bộ và đồng bộ dữ liệu bảo mật.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
+    "desc": "Bản phát hành thử nghiệm gói ứng dụng ML Test siêu nhẹ, kiểm thử tốc độ tải xuống và quy trình cài đặt tự động trên Liokun Store.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.0/app-release.apk"
   }
 ]
