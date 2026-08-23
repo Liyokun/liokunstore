@@ -1,51 +1,23 @@
 [
   {
     "id": "app_01",
-    "name": "RedLi Reader Pro",
-    "icon": "icon_readlite.png",
-    "desc": "Trình đọc tiểu thuyết và truyện chữ tối giản tốc độ cao. Tự động tối ưu giao diện WebView, chặn quảng cáo rác và lưu tiến trình đọc thông minh.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
+    "name": "Liokun Text to PC",
+    "icon": "liokuntexttopc.png",
+    "desc": "Kết nối điện thoại và PC siêu tốc qua mạng nội bộ Wi-Fi. Hỗ trợ đồng bộ bảng nhớ tạm (clipboard) một chạm, gửi và lưu trữ văn bản, hình ảnh cùng tệp tin an toàn giữa các thiết bị.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/Liokun.ttpc.apk"
   },
   {
     "id": "app_02",
-    "name": "Text to PC Sync",
-    "icon": "icon_textsync.png",
-    "desc": "Tiện ích chia sẻ nhanh nội dung clipboard và văn bản giữa điện thoại và máy tính qua mạng nội bộ Wi-Fi với một chạm.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
+    "name": "Liokun Bookshelf",
+    "icon": "liokunbookshelf.png",
+    "desc": "Trình quản lý và lưu trữ danh sách truyện đọc cá nhân. Giúp sắp xếp kệ sách theo thể loại dễ dàng, lưu trữ bookmark và theo dõi tiến trình đọc gọn gàng, tiện lợi.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.2/redli.apk"
   },
   {
     "id": "app_03",
-    "name": "Liokun Auto Clicker",
-    "icon": "icon_autoclick.png",
-    "desc": "Công cụ tự động hóa thao tác chạm và vuốt đa điểm tốc độ cao. Hỗ trợ lưu kịch bản macro tùy biến không cần root thiết bị.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-  },
-  {
-    "id": "app_04",
-    "name": "Neon Budget Master",
-    "icon": "icon_budget.png",
-    "desc": "Bảng điều khiển tài chính cá nhân giao diện Cyberpunk. Quản lý dòng tiền, theo dõi chi tiêu và thống kê trực quan.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-  },
-  {
-    "id": "app_05",
-    "name": "Live Particle Wallpaper",
-    "icon": "icon_wallpaper.png",
-    "desc": "Bộ hình nền động hiệu ứng hạt thời gian thực: lá rơi, mưa sao băng nhẹ nhàng và tối ưu tiết kiệm pin màn hình.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-  },
-  {
-    "id": "app_06",
-    "name": "AgriWeight Scale Calc",
-    "icon": "icon_agriweight.png",
-    "desc": "Công cụ tính và ghi log tổng khối lượng hàng hóa, nông sản theo từng đợt cân thực tế với giao diện một chạm.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/redli.apk"
-  },
-  {
-    "id": "app_07",
-    "name": "ML Core Test App",
-    "icon": "icon_quicknote.png",
-    "desc": "Bản phát hành thử nghiệm gói ứng dụng ML Test siêu nhẹ, kiểm thử tốc độ tải xuống và quy trình cài đặt tự động trên Liokun Store.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.0/app-release.apk"
+    "name": "Liokun Library",
+    "icon": "liokunlibrary.png",
+    "desc": "Phiên bản nâng cấp toàn diện từ Liokun Bookshelf. Giữ trọn tính năng quản lý truyện cốt lõi, nâng cấp giao diện kính mờ tinh gọn và bổ sung các bộ lọc phân loại chuyên sâu.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v.2.0.2/liokunlibrary.apk"
   }
 ]
