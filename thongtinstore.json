@@ -19,5 +19,12 @@
     "icon": "liokunlibrary.png",
     "desc": "Phiên bản nâng cấp toàn diện từ Liokun Bookshelf. Giữ trọn tính năng quản lý truyện cốt lõi, nâng cấp giao diện kính mờ tinh gọn và bổ sung các bộ lọc phân loại chuyên sâu.",
     "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v.2.0.2/liokunlibrary.apk"
+  },
+  {
+    "id": "app_04",
+    "name": "Liokun Wallpaper",
+    "icon": "liokun_wallpaper.png",
+    "desc": "Ứng dụng hình nền động mượt mà kết hợp hiệu ứng hạt Canvas sống động. Hỗ trợ quản lý bộ sưu tập album ảnh cá nhân, tùy biến chủ đề thời gian, điều khiển nhanh qua bong bóng nổi và tối ưu tiết kiệm pin thông minh.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v.1.0.3/app-release.apk"
   }
 ]
