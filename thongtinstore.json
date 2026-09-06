@@ -26,5 +26,12 @@
     "icon": "liokun_wallpaper.png",
     "desc": "Ứng dụng hình nền động mượt mà kết hợp hiệu ứng hạt Canvas sống động. Hỗ trợ quản lý bộ sưu tập album ảnh cá nhân, tùy biến chủ đề thời gian, điều khiển nhanh qua bong bóng nổi và tối ưu tiết kiệm pin thông minh.",
     "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v.1.0.3/app-release.apk"
+  },
+  {
+    "id": "app_05",
+    "name": "Liokun Editor",
+    "icon": "editor.png",
+    "desc": "Trình soạn thảo mã nguồn Hybrid cao cấp tích hợp NanoHTTPD Local Server giúp chạy và liên kết các file dự án trực tiếp không bị chặn CORS. Hỗ trợ giao diện kính mờ chuẩn Chrome, quản lý đa tab lưu phiên làm việc tự động.",
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v.1.0.4/app-release.apk"
   }
 ]
