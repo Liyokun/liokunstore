@@ -4,7 +4,7 @@
     "name": "Liokun Text to PC",
     "icon": "liokuntexttopc.png",
     "desc": "Kết nối điện thoại và PC siêu tốc qua mạng nội bộ Wi-Fi. Hỗ trợ đồng bộ bảng nhớ tạm (clipboard) một chạm, gửi và lưu trữ văn bản, hình ảnh cùng tệp tin an toàn giữa các thiết bị.",
-    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/Liokun.ttpc.apk"
+    "download_url": "https://github.com/Liyokun/liokunstore/releases/download/v1.0.1/app-release.apk"
   },
   {
     "id": "app_02",
